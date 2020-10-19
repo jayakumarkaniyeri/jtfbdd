@@ -1,8 +1,13 @@
 Feature: Test the login functionality
 
-Scenario: User login with valid credentials
+  Scenario Outline: User login with valid credentials
+    Given browser is open
+    And user is on login page
+    When user enters <username> and <password>
+    And press login button
+    Then user should be able to login successfully
 
-Given user is on login page
-When user enter userame and password
-And press login button
-Then user should be able to login successfully
+    Examples: 
+      | username | password |
+      | jay      |    12345 |
+      | aishu    |    12345 |
