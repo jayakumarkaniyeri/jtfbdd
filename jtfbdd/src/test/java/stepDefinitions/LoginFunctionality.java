@@ -7,12 +7,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.*;
-import pageObjects.LoginPage;
+import pageObjects.HomePage;
+//import pageObjects.LoginPage;
+import pageObjects.LoginPage_PF;
 
 public class LoginFunctionality {
 	
 	WebDriver driver;
-	LoginPage lp;
+	LoginPage_PF lp;
+	HomePage hp;
 	
 	@Given("browser is open")
 	public void browser_is_open() {
@@ -37,7 +40,7 @@ public class LoginFunctionality {
 
 	@When("^user enters (.*) and (.*)$")
 	public void user_enters_userame_and_password(String username, String password) throws InterruptedException  {
-		lp = new LoginPage(driver);
+		lp = new LoginPage_PF(driver);
 		lp.login(username, password);
 		
 		//driver.findElement(By.id("name")).sendKeys(username);
@@ -58,7 +61,8 @@ public class LoginFunctionality {
 	@Then("user should be able to login successfully")
 	public void user_should_be_able_to_login_successfully() throws InterruptedException {
 		
-		lp.checkLogOutBtn();
+		hp = new HomePage(driver);
+		hp.checkLogout();
 		//driver.findElement(By.id("logout")).isDisplayed();
 		
 		Thread.sleep(2000);
