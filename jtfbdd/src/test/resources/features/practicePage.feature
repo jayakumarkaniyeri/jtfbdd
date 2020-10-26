@@ -10,4 +10,11 @@ Feature: Try automating practice page in BDD
     And User search for India
     And User selects option1 from drop down
     Then User should be able to select Option2 under checkbox options
-    
+
+  @smoke
+  Scenario: 
+    When user clicks on open window button
+    And new window opens
+    And user should be able to select courses
+    And user is able to click on open tab button
+    Then user plays with alert

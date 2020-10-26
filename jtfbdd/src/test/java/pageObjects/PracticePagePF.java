@@ -37,6 +37,15 @@ public class PracticePagePF {
 	@FindBy(id = "dropdown-class-example")
 	WebElement stc_dropdwon;
 	
+	@FindBy(id = "openwindow")
+	WebElement btn_openwindow;
+	
+	@FindBy(xpath = "//header/div[2]/div[1]/nav[1]/ul[1]/li[2]/a[1]")
+	WebElement link_courses;
+	
+	@FindBy(css = "#opentab")
+	WebElement btn_opentab;
+	
 	
 	public void selectRadioBtn() {
 		rbtn_one.click();
@@ -65,5 +74,18 @@ public class PracticePagePF {
 		Select s = new Select(stc_dropdwon);
 		s.selectByValue(val);
 	}
+	
+	public void clickOpenWindow() {
+		btn_openwindow.click();
+	}
+	
+	public void clickCourses() {
+		link_courses.click();
+	}
+	
+	public void ClickOpenTab() {
+		btn_opentab.click();
+	}
+	
 
 }
