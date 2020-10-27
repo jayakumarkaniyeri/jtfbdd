@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features = "src/test/resources/features", glue = {"stepDefinitions"},
 monochrome = true, 
 plugin = {"json:target/cucumber.json/"},
-tags = "@Assignment"
+tags = "@actionTest"
 
 		)
 
