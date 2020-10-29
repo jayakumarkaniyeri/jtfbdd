@@ -7,10 +7,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/features", glue = {"stepDefinitions"},
+@CucumberOptions(features = "src/test/resources/features/login.feature", glue = {"stepDefinitions"},
 monochrome = true, 
-plugin = {"json:target/cucumber.json/"},
-tags = "@actionTest"
+plugin = {"json:target/cucumber.json/"}
+
 
 		)
 
