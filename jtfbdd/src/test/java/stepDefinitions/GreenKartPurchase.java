@@ -92,6 +92,22 @@ public class GreenKartPurchase {
 
 		driver.findElement(By.cssSelector("a.cart-icon img")).click();
 		driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
+		
+		//total validation
+		int rowCount = driver.findElements(By.cssSelector("table[class='cartTable'] tr")).size();
+		int count = driver.findElements(By.cssSelector("table[class='cartTable'] tr td:nth-child(5) p")).size();
+		
+		int sum = 0;
+		for(int i = 0; i < count; i++) {
+			String value = driver.findElements(By.cssSelector("table[class='cartTable'] tr td:nth-child(5) p")).get(i).getText();
+			int valueInt = Integer.parseInt(value);
+			sum += valueInt;
+		}
+		
+		String totAmt = driver.findElement(By.cssSelector("span[class='totAmt']")).getText();
+		int totalAmt = Integer.parseInt(totAmt);
+		Assert.assertEquals(totalAmt, sum);
+		
 		driver.findElement(By.xpath("//button[text()='Place Order']")).click();
 	}
 

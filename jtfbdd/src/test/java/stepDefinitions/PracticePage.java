@@ -25,7 +25,7 @@ public class PracticePage {
 
 
 
-	@SuppressWarnings("deprecation")
+	
 	@Given("^Chrome browser is launched$")
 	public void chrome_browser_is_launched() {
 
