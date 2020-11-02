@@ -170,6 +170,28 @@ public class PracticePage {
 		
 		
 	}
+	
+	@When("^user presented with tabular data$")
+	public void tableCheck() {
+		List<WebElement> rows = driver.findElements(By.cssSelector("#product tr"));
+		int rowCount = rows.size();
+		int total = 0;
+		for(int i = 0; i < rowCount-1; i++ ) {
+			String price = driver.findElements(By.cssSelector("#product tr td:nth-child(3)")).get(i).getText();
+			total += Integer.parseInt(price);
+		}
+		
+		Assert.assertEquals(235, total);
+		//235
+		
+	}
+	
+	@Then("^validate data in it$")
+	public void tableDataValidation() {
+		
+		
+		//#product tr td:nth-child(3)
+	}
 
 
 

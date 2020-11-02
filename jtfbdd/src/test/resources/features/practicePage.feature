@@ -18,3 +18,9 @@ Feature: Try automating practice page in BDD
     And user should be able to select courses
     And user is able to click on open tab button
     Then user plays with alert
+
+  @tableTest
+  Scenario: 
+    When user presented with tabular data
+    Then validate data in it
+    
